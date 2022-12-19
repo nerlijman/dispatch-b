@@ -18,5 +18,8 @@ jobs:
               repo: 'dispatch-a',
               workflow_id: 'ci.yaml',
               ref: 'main',
+              inputs: {
+                origin: 'the-service-who-broke-it'
+              }
             })    
 
