@@ -20,7 +20,7 @@ jobs:
               workflow_id: 'ci.yaml',
               ref: 'main',
               inputs: {
-                origin: 'me'
+                origin: context.repo.name,
               }
             })    
 
