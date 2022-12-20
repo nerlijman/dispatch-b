@@ -10,7 +10,9 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "$GITHUB_CONTEXT" 
+      - name: print-context
+        run: echo '${{ toJSON(github) }}'
+        
       - uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.DISPATCH_TOKEN }}
