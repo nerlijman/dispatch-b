@@ -12,14 +12,12 @@ jobs:
     steps:
       - name: print-github
         run: echo '${{ toJSON(github) }}'
-      - name: print-context
-        run: echo '${{ toJSON(context) }}'
-        
         
       - uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.DISPATCH_TOKEN }}
           script: |
+            echo '${{ toJSON(context) }}'
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: 'dispatch-a',
