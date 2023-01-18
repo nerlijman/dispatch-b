@@ -18,7 +18,6 @@ jobs:
         with:
           github-token: ${{ secrets.DISPATCH_TOKEN }}
           script: |
-            echo '${{ toJSON(context) }}'
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: 'dispatch-a',
