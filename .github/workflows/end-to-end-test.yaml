@@ -14,11 +14,7 @@ jobs:
       - name: print-github
         run: |
           AUTHOR='${{ github.triggering_actor }}'
-          MESSAGE="The author is $AUTHOR"
-          #echo '${{ github.triggering_actor}}'
-          #echo '${{ toJSON(github) }}'
-          #echo "::set-output name=message::$MESSAGE"
-
+          MESSAGE="The author is ::$AUTHOR"
         
       - uses: actions/github-script@v6
         with:
