@@ -11,17 +11,17 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: print-github
+      - name: print_github
         run: |
-          AUTHOR='${{ github.triggering_actor }}'
+          THE_AUTHOR='${{ github.triggering_actor }}'
           MESSAGE="The author is $AUTHOR"
           echo "$MESSAGE"
-          # echo "::set-output name=author::$AUTHOR"
-          echo "author=$AUTHOR" >> $GITHUB_OUTPUT
+          # echo "::set-output name=author::$THE_AUTHOR"
+          echo "author=$THE_AUTHOR" >> $GITHUB_OUTPUT
  
       - name: print
         run: |
-          echo '${{ steps.print-github.outputs.author }}'
+          echo '${{ steps.print_github.outputs.author }}'
           # echo '${{ author }}'
         
       - uses: actions/github-script@v6
@@ -35,7 +35,7 @@ jobs:
               ref: 'main',
               inputs: {
                 origin: context.repo.repo,
-                author: '${{ steps.print-github.outputs.author }}'
+                author: '${{ steps.print_github.outputs.author }}'
               }
             })    
 
