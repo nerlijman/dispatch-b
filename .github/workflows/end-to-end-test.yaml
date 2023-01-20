@@ -14,14 +14,14 @@ jobs:
       - name: print_github
         run: |
           THE_AUTHOR='${{ github.triggering_actor }}'
-          MESSAGE="The author is $AUTHOR"
+          MESSAGE="The author is $THE_AUTHOR"
           echo "$MESSAGE"
           # echo "::set-output name=author::$THE_AUTHOR"
           echo "author=$THE_AUTHOR" >> $GITHUB_OUTPUT
  
       - name: print
         run: |
-          echo '${{ steps.print_github.outputs }}'
+          echo '${{ steps.print_github.outputs.author }}'
         
       - uses: actions/github-script@v6
         with:
