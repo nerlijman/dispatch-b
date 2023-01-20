@@ -34,7 +34,7 @@ jobs:
               ref: 'main',
               inputs: {
                 origin: context.repo.repo,
-                author: '$author'
+                author: $author
               }
             })    
 
