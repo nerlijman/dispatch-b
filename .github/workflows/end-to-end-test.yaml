@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: print-github
         run: |
+          AUTHOR='${{ github.triggering_actor }}'
+          MESSAGE=format('{0} by {1}', 'There was an error building the image', $AUTHOR)
           echo '${{ github.triggering_actor}}'
           echo '${{ toJSON(github) }}'
         
