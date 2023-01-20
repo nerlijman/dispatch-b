@@ -16,8 +16,12 @@ jobs:
           AUTHOR='${{ github.triggering_actor }}'
           MESSAGE="The author is $AUTHOR"
           echo "$MESSAGE"
-          echo "::set-output name=author::$AUTHOR"
+          # echo "::set-output name=author::$AUTHOR"
+          echo "author=$AUTHOR" >> $VAR_AUTHOR
  
+      - name: print
+        run: |
+          echo '${{ steps.print-github.outputs.author }}'
         
       - uses: actions/github-script@v6
         with:
