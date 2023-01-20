@@ -15,6 +15,7 @@ jobs:
         run: |
           AUTHOR='${{ github.triggering_actor }}'
           MESSAGE="The author is ::$AUTHOR"
+          echo "::$MESSAGE"
         
       - uses: actions/github-script@v6
         with:
