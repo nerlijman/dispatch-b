@@ -17,7 +17,7 @@ jobs:
           MESSAGE="The author is $AUTHOR"
           echo "$MESSAGE"
           # echo "::set-output name=author::$AUTHOR"
-          echo "author=$AUTHOR" >> $VAR_AUTHOR
+          echo "author=$AUTHOR" >> $GITHUB_OUTPUT
  
       - name: print
         run: |
