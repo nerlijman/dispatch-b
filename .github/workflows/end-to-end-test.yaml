@@ -14,7 +14,7 @@ jobs:
       - name: print-github
         run: |
           AUTHOR='${{ github.triggering_actor }}'
-          MESSAGE=format('{0} by {1}', 'There was an error building the image', $AUTHOR)
+          MESSAGE="There was an error building the image by $AUTHOR")
           echo '${{ github.triggering_actor}}'
           echo '${{ toJSON(github) }}'
         
