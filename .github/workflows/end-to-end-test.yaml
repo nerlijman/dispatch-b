@@ -22,7 +22,7 @@ jobs:
       - name: print
         run: |
           echo '${{ steps.print-github.outputs.author }}'
-          echo '${{ author }}'
+          # echo '${{ author }}'
         
       - uses: actions/github-script@v6
         with:
