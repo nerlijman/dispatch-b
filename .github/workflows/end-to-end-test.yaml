@@ -21,8 +21,7 @@ jobs:
  
       - name: print
         run: |
-          echo '${{ steps.print_github.outputs.author }}'
-          # echo '${{ author }}'
+          echo '${{ steps.print_github.outputs }}'
         
       - uses: actions/github-script@v6
         with:
