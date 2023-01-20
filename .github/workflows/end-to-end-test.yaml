@@ -17,7 +17,7 @@ jobs:
           MESSAGE="The author is $AUTHOR"
           echo "$MESSAGE"
           echo "::set-output name=author::$AUTHOR"
-
+ 
         
       - uses: actions/github-script@v6
         with:
