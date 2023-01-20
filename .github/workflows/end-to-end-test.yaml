@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: set_variables
         run: |
-          AUTHOR='${{ github.triggering_actor }}'
+          AUTHOR='${{ github.triggering_actor }}' 
           export MESSAGE="The author is $AUTHOR"
           echo "author=$AUTHOR" >> $GITHUB_ENV
           echo "message=$MESSAGE" >> $GITHUB_ENV
