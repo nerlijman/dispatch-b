@@ -34,7 +34,7 @@ jobs:
               ref: 'main',
               inputs: {
                 origin: context.repo.repo,
-                author: '${{ env.author }}'
+                author: '${{ github.triggering_actor }}'
               }
             })    
 
