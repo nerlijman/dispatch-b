@@ -17,8 +17,8 @@ jobs:
           MESSAGE='The author is $AUTHOR'
           #echo '${{ github.triggering_actor}}'
           #echo '${{ toJSON(github) }}'
-          echo "::set-output name=message::$MESSAGE"
-          echo '${{ message }}'
+          #echo "::set-output name=message::$MESSAGE"
+          echo '${{ ::$MESSAGE }}'
         
       - uses: actions/github-script@v6
         with:
