@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print-github
-        run: echo '${{ toJSON(github) }}'
+        run: |
+          echo '${{ github.triggering_actor}}'
+          echo '${{ toJSON(github) }}'
         
       - uses: actions/github-script@v6
         with:
