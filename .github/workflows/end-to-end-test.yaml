@@ -11,17 +11,17 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: print_github
+      - name: set_variables
         run: |
-          THE_AUTHOR='${{ github.triggering_actor }}'
-          MESSAGE="The author is $THE_AUTHOR"
+          AUTHOR='${{ github.triggering_actor }}'
+          export MESSAGE="The author is $AUTHOR"
           echo "$MESSAGE"
-          # echo "::set-output name=author::$THE_AUTHOR"
-          echo "author=$THE_AUTHOR" >> $GITHUB_OUTPUT
+          echo "author=$AUTHOR" >> $GITHUB_ENV
+          echo "message=$MESSAGE" >> $GITHUB_ENV
  
       - name: print
         run: |
-          echo '${{ steps.print_github.outputs.author }}'
+          echo $message
         
       - uses: actions/github-script@v6
         with:
